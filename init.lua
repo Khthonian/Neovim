@@ -85,6 +85,7 @@ require('lazy').setup({
       -- Automatically install LSPs to stdpath for neovim
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
+      'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
@@ -501,6 +502,25 @@ require('which-key').register {
 -- before setting up the servers.
 require('mason').setup()
 require('mason-lspconfig').setup()
+require('mason-tool-installer').setup {
+
+  -- a list of all tools you want to ensure are installed upon
+  -- start; they should be the names Mason uses for each tool
+  ensure_installed = {
+    'black',
+    'clang-format',
+    'clangd',
+    'cpplint',
+    'eslint_d',
+    'isort',
+    'lua-language-server',
+    'prettier',
+    'pyright',
+    'ruff',
+    'rust-analyzer',
+    'stylua',
+  },
+}
 
 -- Enable the following language servers
 --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
@@ -511,19 +531,19 @@ require('mason-lspconfig').setup()
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
 local servers = {
-  clangd = {},
+  --clangd = {},
   -- gopls = {},
-  pyright = {},
-  rust_analyzer = {},
+  --pyright = {},
+  --rust_analyzer = {},
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
-  lua_ls = {
-    Lua = {
-      workspace = { checkThirdParty = false },
-      telemetry = { enable = false },
-    },
-  },
+  --lua_ls = {
+  --  Lua = {
+  --    workspace = { checkThirdParty = false },
+  --    telemetry = { enable = false },
+  --  },
+  --},
 }
 
 -- Setup neovim lua configuration
