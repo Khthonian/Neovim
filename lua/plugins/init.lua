@@ -1,19 +1,33 @@
 return {
   {
-    "stevearc/conform.nvim",
-    event = { "BufReadPre", "BufNewFile" },
+    'stevearc/conform.nvim',
+    event = { 'BufReadPre', 'BufNewFile' },
     lazy = true,
     config = function()
-      require "configs.conform"
+      require 'configs.conform'
     end,
   },
 
   {
-    "mfussenegger/nvim-lint",
-    event = { "BufReadPre", "BufNewFile" },
+    'mfussenegger/nvim-lint',
+    event = { 'BufReadPre', 'BufNewFile' },
     lazy = true,
     config = function()
-      require "configs.linting"
+      require 'configs.linting'
+    end,
+  },
+
+  {
+    'ellisonleao/glow.nvim',
+    config = true,
+    cmd = 'Glow',
+  },
+
+  {
+    'iamcco/markdown-preview.nvim',
+    lazy = false,
+    config = function()
+      vim.fn['mkdp#util#install']()
     end,
   },
 
