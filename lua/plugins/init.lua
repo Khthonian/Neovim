@@ -44,13 +44,13 @@ return {
     opts = {
       ensure_installed = {
         'black',
-        'clang_format',
+        'clang-format',
         'clangd',
         'cpplint',
         'eslint_d',
-        'html',
+        'html-lsp',
         'isort',
-        'lua_language_server',
+        'lua-language-server',
         'prettier',
         'pyright',
         'ruff',
