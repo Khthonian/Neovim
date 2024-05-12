@@ -26,4 +26,9 @@ nomap('n', '<leader>fz')
 nomap('n', '<leader>ff')
 nomap('n', '<leader>fa')
 
+-- MarkdownPreview
+
+map('n', '<leader>mp', '<Plug>MarkdownPreview', { desc = 'markdown preview' })
+map('n', '<leader>mg', '<cmd>Glow<CR>', { desc = 'markdown preview: glow' })
+
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
