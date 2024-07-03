@@ -14,7 +14,7 @@ conform.setup {
     markdown = { 'prettier' },
     graphql = { 'prettier' },
     lua = { 'stylua' },
-    python = { 'isort', 'black' },
+    python = { 'black', 'isort' },
     cpp = { 'clang-format' },
   },
 
