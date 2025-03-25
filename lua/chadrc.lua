@@ -24,25 +24,26 @@ M.nvdash = {
     "██║     ██║███████║██║  ██║ ╚████╔╝ ██║██║ ╚═╝ ██║ ",
     "╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝  ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
     "                                                  ",
-    "             ⚡ Powered by Neovim ⚡               ",
+    "             ⚡ Powered by Neovim and NvChad ⚡               ",
     "                                                  ",
   },
   buttons = {
-    { txt = "  Find File", keys = "sf", cmd = "Telescope find_files" },
-    { txt = "󰈚  Recent Files", keys = "so", cmd = "Telescope oldfiles" },
-    { txt = "󰈭  Find Word", keys = "sw", cmd = "Telescope live_grep" },
-    { txt = "  Themes", keys = "th", cmd = "Telescope themes" },
-    { txt = "  Mappings", keys = "ch", cmd = "NvCheatsheet" },
+    { txt = "Find File", keys = "sf", cmd = "Telescope find_files" },
+    { txt = "Recent Files", keys = "so", cmd = "Telescope oldfiles" },
+    { txt = "Find Word", keys = "sw", cmd = "Telescope live_grep" },
+    { txt = "Themes", keys = "th", cmd = "Telescope themes" },
+    { txt = "Mappings", keys = "ch", cmd = "NvCheatsheet" },
+    { txt = "Quit", keys = "q", cmd = "quit" },
   },
 }
 
 M.ui = {
   tabufline = {
-    lazyload = false
+    lazyload = false,
   },
   statusline = {
     theme = "vscode_colored",
-  }
+  },
 }
 
 return M
