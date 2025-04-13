@@ -1,114 +1,120 @@
 return {
   {
-    'folke/which-key.nvim',
-    event = 'VeryLazy'
+    "folke/which-key.nvim",
+    event = "VeryLazy",
   },
 
   {
-    'stevearc/conform.nvim',
-    event = { 'BufReadPre', 'BufNewFile' },
+    "stevearc/conform.nvim",
+    event = { "BufReadPre", "BufNewFile" },
     lazy = true,
     config = function()
-      require 'configs.conform'
+      require "configs.conform"
     end,
   },
 
   {
-    'mfussenegger/nvim-lint',
-    event = { 'BufReadPre', 'BufNewFile' },
+    "mfussenegger/nvim-lint",
+    event = { "BufReadPre", "BufNewFile" },
     lazy = true,
     config = function()
-      require 'configs.linting'
+      require "configs.linting"
     end,
   },
 
   {
-    'ellisonleao/glow.nvim',
+    "ellisonleao/glow.nvim",
     config = true,
-    cmd = 'Glow',
+    cmd = "Glow",
   },
 
   {
-    'iamcco/markdown-preview.nvim',
+    "iamcco/markdown-preview.nvim",
     lazy = false,
     config = function()
-      vim.fn['mkdp#util#install']()
+      vim.fn["mkdp#util#install"]()
     end,
   },
 
   {
-    'neovim/nvim-lspconfig',
+    "MeanderingProgrammer/render-markdown.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" },
+    opts = {},
+  },
+
+  {
+    "neovim/nvim-lspconfig",
     config = function()
-      require('nvchad.configs.lspconfig').defaults()
-      require 'configs.lspconfig'
+      require("nvchad.configs.lspconfig").defaults()
+      require "configs.lspconfig"
     end,
   },
 
   {
-    'williamboman/mason.nvim',
+    "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        'black',
-        'clang-format',
-        'clangd',
-        'cpplint',
-        'eslint_d',
-        'html-lsp',
-        'isort',
-        'lua-language-server',
-        'prettier',
-        'pyright',
-        'ruff',
-        'rust-analyzer',
-        'stylua',
+        "black",
+        "clang-format",
+        "clangd",
+        "cpplint",
+        "eslint_d",
+        "html-lsp",
+        "isort",
+        "lua-language-server",
+        "prettier",
+        "pyright",
+        "ruff",
+        "rust-analyzer",
+        "stylua",
       },
     },
   },
 
   {
-    'nvim-treesitter/nvim-treesitter',
+    "nvim-treesitter/nvim-treesitter",
     dependencies = {
-      'nvim-treesitter/nvim-treesitter-textobjects',
+      "nvim-treesitter/nvim-treesitter-textobjects",
     },
     opts = {
       ensure_installed = {
-        'vim',
-        'lua',
-        'vimdoc',
-        'html',
-        'css',
+        "vim",
+        "lua",
+        "vimdoc",
+        "html",
+        "css",
       },
     },
   },
 
   {
-    'hrsh7th/nvim-cmp',
+    "hrsh7th/nvim-cmp",
     dependencies = {
       {
-        'zbirenbaum/copilot-cmp',
+        "zbirenbaum/copilot-cmp",
         config = function()
-          require('copilot_cmp').setup()
+          require("copilot_cmp").setup()
         end,
       },
     },
     opts = {
       sources = {
-        { name = 'nvim_lsp' },
-        { name = 'luasnip' },
-        { name = 'buffer' },
-        { name = 'nvim_lua' },
-        { name = 'path' },
-        { name = 'copilot' },
+        { name = "nvim_lsp" },
+        { name = "luasnip" },
+        { name = "buffer" },
+        { name = "nvim_lua" },
+        { name = "path" },
+        { name = "copilot" },
       },
     },
   },
 
   {
-    'zbirenbaum/copilot.lua',
-    cmd = 'Copilot',
-    event = 'InsertEnter',
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
     config = function()
-      require('copilot').setup()
+      require("copilot").setup()
     end,
     opts = {
       suggestion = {
@@ -121,14 +127,9 @@ return {
   },
 
   {
-    'zbirenbaum/copilot-cmp',
+    "zbirenbaum/copilot-cmp",
     config = function()
-      require('copilot_cmp').setup()
+      require("copilot_cmp").setup()
     end,
   },
-
-  -- {
-  --   'github/copilot.vim',
-  --   lazy = false,
-  -- },
 }
